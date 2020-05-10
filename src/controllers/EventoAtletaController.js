@@ -1,4 +1,6 @@
 const EventoAtleta = require('../models/EventoAtleta');
+const EventoAtletaAtividade = require('../models/EventoAtletaAtividade');
+
 
 module.exports = {
 
@@ -10,6 +12,7 @@ module.exports = {
 
         return response.json({eventosAtleta});
     },
+
 
     async salvar (request, response) {
         const { evento, atleta, data_cadastro } = request.body;

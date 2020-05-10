@@ -15,12 +15,14 @@ routes.get('/eventosatleta', EventoAtletaController.index);
 routes.post('/eventoatleta', EventoAtletaController.salvar);
 
 
+
 routes.get('/atletas', AtletaController.index);
 routes.get('/atleta/login',  AtletaController.login);
 routes.post('/atleta', AtletaController.salvar);
 
 routes.get('/atividades', EventoAtletaAtividadeController.index);
 routes.post('/atividade', EventoAtletaAtividadeController.salvar);
+
 
 
 module.exports = routes;
