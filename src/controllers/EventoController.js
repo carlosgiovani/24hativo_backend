@@ -12,10 +12,11 @@ module.exports = {
     },
 
      async recuperarEventoAtivoAtleta (request, response) {
-        const { id_atleta } =  request.query;  
+        const { id_atleta, id_evento } =  request.query;  
 
-        //TODO falta filtrar
-        var data = await EventoAtleta.findOne().populate('evento').populate('atleta');
+        var data = await EventoAtleta.findOne()
+                                     .populate({ path: 'evento' , match: { _id: id_evento } })
+                                     .populate({ path: 'atleta', match: { _id: id_atleta } });
 
         return response.json({data});
     },

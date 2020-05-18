@@ -1,8 +1,16 @@
 const mongoose = require('mongoose');
 
 const EventoAtletaAtividadeSchema = new mongoose.Schema({
-    id_evento: String,
-    id_atleta: String,
+    atleta: {
+        type : mongoose.Schema.Types.ObjectId,
+        ref: 'Atleta',
+        require: true
+    },
+    evento: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: 'Evento',
+        require: true 
+    },
     semana: Number,
     dia: Number,
     tempo: Number,
