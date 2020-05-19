@@ -1,5 +1,6 @@
 const Evento = require('../models/Evento');
 const EventoAtleta = require('../models/EventoAtleta');
+const EventoSemana = require('../models/EventoSemana');
 
 module.exports = {
 
@@ -33,5 +34,17 @@ module.exports = {
         });
     
         return response.json(evento);
-    }
+    },
+
+    async salvarEventoSemana (request, response) {
+        const { semana, tempo, evento } = request.body;
+    
+        const eventoSemana = await EventoSemana.create({
+           semana,
+           tempo, 
+           evento
+        });
+    
+        return response.json(eventoSemana);
+    },
 };

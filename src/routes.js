@@ -10,6 +10,7 @@ const routes = Router();
 routes.get('/eventos', EventoController.index);
 routes.post('/evento', EventoController.salvar);
 routes.get('/eventoativoatleta', EventoController.recuperarEventoAtivoAtleta);
+routes.post('/eventoSemana', EventoController.salvarEventoSemana);
 
 routes.get('/eventosatleta', EventoAtletaController.index);
 routes.post('/eventoatleta', EventoAtletaController.salvar);
