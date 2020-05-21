@@ -6,19 +6,16 @@ module.exports = {
 
         const { id_atleta, id_evento } =  request.query;   
 
-        const atividades = await EventoAtletaAtividade.find({ 
-            id_atleta: id_atleta,
-            id_evento: id_evento 
-        });
-
+        const atividades = await EventoAtletaAtividade.find( { evento: id_evento, atleta : id_atleta });
+        
         return response.json({atividades});
     },
 
     async salvar (request, response) {
         const 
         {
-            id_evento, 
-            id_atleta, 
+            evento, 
+            atleta, 
             data_cadastro ,
             semana,
             dia,
@@ -31,8 +28,8 @@ module.exports = {
         }  = request.body;
     
         const atividade = await EventoAtletaAtividade.create({
-            id_evento, 
-            id_atleta, 
+            evento, 
+            atleta, 
             data_cadastro ,
             semana,
             dia,
