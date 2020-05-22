@@ -15,7 +15,7 @@ module.exports = {
      async recuperarEventoAtivoAtleta (request, response) {
         const { id_atleta, id_evento } =  request.query;  
 
-        var data = await EventoAtleta.findOne({ evento: id_evento, atleta : id_atleta })
+        var data = await EventoAtleta.findOne({ atleta : id_atleta })
                                      .populate({ path: 'evento' , match: { _id: id_evento } })
                                      .populate({ path: 'atleta', match: { _id: id_atleta } });
 
