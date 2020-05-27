@@ -24,7 +24,7 @@ module.exports = {
             pontuacao,
             pontuacao_mensagem,
             observacao,
-            eforco
+            esforco
         }  = request.body;
     
         const atividade = await EventoAtletaAtividade.create({
@@ -38,7 +38,7 @@ module.exports = {
             pontuacao,
             pontuacao_mensagem,
             observacao,
-            eforco
+            esforco
         });
     
         return response.json(atividade);
